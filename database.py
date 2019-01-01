@@ -4,21 +4,18 @@ from random import randint
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password = "123pass",
-  database = "mydatabase"
+  password = "yourpassword",
+  database = "mydatabase"     #put the name of the database if it already exists on MySQL server
 )
 
 
 myCursor = mydb.cursor()
 
-#myCursor.execute("CREATE TABLE students(name VARCHAR(255), studentID VARCHAR(255))")  #Use this command once to create a new table on the database
+#mycursor.execute("CREATE DATABASE mydatabase") //Code to create the database, executed only once in the beginning
+#myCursor.execute("CREATE TABLE students(name VARCHAR(255), studentID VARCHAR(255))")  //Use this command once to create a new table on the database
 #myCursor.execute("SHOW TABLES")    #COMMAND TO SHOW THE TABLE FROM THE DATABASE
 
-
-deleteByName = "DELETE FROM students WHERE name = %s"
-deleteByID = "DELETE FROM students WHERE studentID = %s"
-orderByName = "SELECT * FROM students ORDER BY name"
-
+#Example of variables to insert in the table
 val = [
   ('John Doe', '7315342'),
   ('Amy Adams', '7845693'),
